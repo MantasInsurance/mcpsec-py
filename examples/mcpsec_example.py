@@ -29,7 +29,8 @@ def main():
     }
 
     # 3. Wrap it inside MCP-Sec standard context
-    issued_at = datetime.utcnow()
+    from datetime import datetime, timezone
+    issued_at = datetime.now(timezone.utc)
     expires_at = issued_at + timedelta(minutes=5)
 
     context_wrapper = {
