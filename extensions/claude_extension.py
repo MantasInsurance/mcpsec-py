@@ -20,13 +20,14 @@ CLAUDE_CONTEXT_SCHEMA = {
                 "required": ["role", "content"]
             }
         },
+        "max_tokens": {"type": "integer"},
         "temperature": {"type": "number"},
         "top_p": {"type": "number"},
         "stream": {"type": "boolean"},
         "system": {"type": "string"},
         "metadata": {"type": "object"}
     },
-    "required": ["model", "messages"]
+    "required": ["model", "messages", "max_tokens"]
 }
 
 def get_claude_context_schema() -> dict:
